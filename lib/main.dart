@@ -9,6 +9,7 @@ import 'flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 import 'flutter_flow/internationalization.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'index.dart';
 
@@ -79,15 +80,13 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData(brightness: Brightness.dark),
       themeMode: _themeMode,
       home: initialUser == null || displaySplashImage
-          ? Container(
-              color: Colors.transparent,
-              child: Center(
-                child: Builder(
-                  builder: (context) => Image.asset(
-                    'assets/images/Medical_ScheduleApp_0.0.png',
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    fit: BoxFit.fitWidth,
-                  ),
+          ? Center(
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: SpinKitPumpingHeart(
+                  color: FlutterFlowTheme.of(context).primaryColor,
+                  size: 40,
                 ),
               ),
             )
@@ -109,7 +108,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'homePage';
+  String _currentPage = 'myAppointments';
 
   @override
   void initState() {
@@ -120,9 +119,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'homePage': HomePageWidget(),
       'myAppointments': MyAppointmentsWidget(),
       'profilePage': ProfilePageWidget(),
+      'pastAppointments': PastAppointmentsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
     return Scaffold(
@@ -137,18 +136,6 @@ class _NavBarPageState extends State<NavBarPage> {
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home_outlined,
-              size: 24,
-            ),
-            activeIcon: Icon(
-              Icons.home_rounded,
-              size: 24,
-            ),
-            label: ' Home',
-            tooltip: '',
-          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.date_range_outlined,
@@ -166,8 +153,12 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.account_circle_outlined,
               size: 24,
             ),
-            activeIcon: Icon(
-              Icons.account_circle_rounded,
+            label: ' Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.history,
               size: 24,
             ),
             label: 'Profile',

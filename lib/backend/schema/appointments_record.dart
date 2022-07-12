@@ -12,59 +12,61 @@ abstract class AppointmentsRecord
       _$appointmentsRecordSerializer;
 
   @nullable
-  String get appointmentName;
+  @BuiltValueField(wireName: 'patient_ref')
+  DocumentReference get patientRef;
 
   @nullable
-  String get appointmentDescription;
+  @BuiltValueField(wireName: 'token_num')
+  String get tokenNum;
 
   @nullable
-  DocumentReference get appointmentPerson;
+  String get doctor;
 
   @nullable
-  DateTime get appointmentTime;
+  bool get valet;
 
   @nullable
-  String get appointmentType;
+  DocumentReference get location;
 
   @nullable
-  String get appointmentEmail;
+  bool get xray;
 
   @nullable
-  String get email;
+  @BuiltValueField(wireName: 'blood_test')
+  bool get bloodTest;
 
   @nullable
-  @BuiltValueField(wireName: 'display_name')
-  String get displayName;
+  @BuiltValueField(wireName: 'ct_scan')
+  bool get ctScan;
 
   @nullable
-  @BuiltValueField(wireName: 'photo_url')
-  String get photoUrl;
+  @BuiltValueField(wireName: 'patient_name')
+  String get patientName;
 
   @nullable
-  String get uid;
+  @BuiltValueField(wireName: 'user_ref')
+  DocumentReference get userRef;
 
   @nullable
-  @BuiltValueField(wireName: 'created_time')
-  DateTime get createdTime;
+  @BuiltValueField(wireName: 'date_time')
+  DateTime get dateTime;
 
   @nullable
-  @BuiltValueField(wireName: 'phone_number')
-  String get phoneNumber;
+  String get type;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(AppointmentsRecordBuilder builder) => builder
-    ..appointmentName = ''
-    ..appointmentDescription = ''
-    ..appointmentType = ''
-    ..appointmentEmail = ''
-    ..email = ''
-    ..displayName = ''
-    ..photoUrl = ''
-    ..uid = ''
-    ..phoneNumber = '';
+    ..tokenNum = ''
+    ..doctor = ''
+    ..valet = false
+    ..xray = false
+    ..bloodTest = false
+    ..ctScan = false
+    ..patientName = ''
+    ..type = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('appointments');
@@ -89,31 +91,31 @@ abstract class AppointmentsRecord
 }
 
 Map<String, dynamic> createAppointmentsRecordData({
-  String appointmentName,
-  String appointmentDescription,
-  DocumentReference appointmentPerson,
-  DateTime appointmentTime,
-  String appointmentType,
-  String appointmentEmail,
-  String email,
-  String displayName,
-  String photoUrl,
-  String uid,
-  DateTime createdTime,
-  String phoneNumber,
+  DocumentReference patientRef,
+  String tokenNum,
+  String doctor,
+  bool valet,
+  DocumentReference location,
+  bool xray,
+  bool bloodTest,
+  bool ctScan,
+  String patientName,
+  DocumentReference userRef,
+  DateTime dateTime,
+  String type,
 }) =>
     serializers.toFirestore(
         AppointmentsRecord.serializer,
         AppointmentsRecord((a) => a
-          ..appointmentName = appointmentName
-          ..appointmentDescription = appointmentDescription
-          ..appointmentPerson = appointmentPerson
-          ..appointmentTime = appointmentTime
-          ..appointmentType = appointmentType
-          ..appointmentEmail = appointmentEmail
-          ..email = email
-          ..displayName = displayName
-          ..photoUrl = photoUrl
-          ..uid = uid
-          ..createdTime = createdTime
-          ..phoneNumber = phoneNumber));
+          ..patientRef = patientRef
+          ..tokenNum = tokenNum
+          ..doctor = doctor
+          ..valet = valet
+          ..location = location
+          ..xray = xray
+          ..bloodTest = bloodTest
+          ..ctScan = ctScan
+          ..patientName = patientName
+          ..userRef = userRef
+          ..dateTime = dateTime
+          ..type = type));

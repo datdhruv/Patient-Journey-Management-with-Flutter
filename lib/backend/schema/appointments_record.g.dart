@@ -21,88 +21,90 @@ class _$AppointmentsRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
     Object value;
-    value = object.appointmentName;
+    value = object.patientRef;
     if (value != null) {
       result
-        ..add('appointmentName')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.appointmentDescription;
-    if (value != null) {
-      result
-        ..add('appointmentDescription')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.appointmentPerson;
-    if (value != null) {
-      result
-        ..add('appointmentPerson')
+        ..add('patient_ref')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 DocumentReference, const [const FullType(Object)])));
     }
-    value = object.appointmentTime;
+    value = object.tokenNum;
     if (value != null) {
       result
-        ..add('appointmentTime')
+        ..add('token_num')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.doctor;
+    if (value != null) {
+      result
+        ..add('doctor')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.valet;
+    if (value != null) {
+      result
+        ..add('valet')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.location;
+    if (value != null) {
+      result
+        ..add('location')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType(Object)])));
+    }
+    value = object.xray;
+    if (value != null) {
+      result
+        ..add('xray')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.bloodTest;
+    if (value != null) {
+      result
+        ..add('blood_test')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.ctScan;
+    if (value != null) {
+      result
+        ..add('ct_scan')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.patientName;
+    if (value != null) {
+      result
+        ..add('patient_name')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.userRef;
+    if (value != null) {
+      result
+        ..add('user_ref')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType(Object)])));
+    }
+    value = object.dateTime;
+    if (value != null) {
+      result
+        ..add('date_time')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
-    value = object.appointmentType;
+    value = object.type;
     if (value != null) {
       result
-        ..add('appointmentType')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.appointmentEmail;
-    if (value != null) {
-      result
-        ..add('appointmentEmail')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.displayName;
-    if (value != null) {
-      result
-        ..add('display_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.photoUrl;
-    if (value != null) {
-      result
-        ..add('photo_url')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.uid;
-    if (value != null) {
-      result
-        ..add('uid')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.createdTime;
-    if (value != null) {
-      result
-        ..add('created_time')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(DateTime)));
-    }
-    value = object.phoneNumber;
-    if (value != null) {
-      result
-        ..add('phone_number')
+        ..add('type')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -129,54 +131,58 @@ class _$AppointmentsRecordSerializer
       iterator.moveNext();
       final Object value = iterator.current;
       switch (key) {
-        case 'appointmentName':
-          result.appointmentName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'appointmentDescription':
-          result.appointmentDescription = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'appointmentPerson':
-          result.appointmentPerson = serializers.deserialize(value,
+        case 'patient_ref':
+          result.patientRef = serializers.deserialize(value,
                   specifiedType: const FullType(
                       DocumentReference, const [const FullType(Object)]))
               as DocumentReference<Object>;
           break;
-        case 'appointmentTime':
-          result.appointmentTime = serializers.deserialize(value,
+        case 'token_num':
+          result.tokenNum = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'doctor':
+          result.doctor = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'valet':
+          result.valet = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'location':
+          result.location = serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      DocumentReference, const [const FullType(Object)]))
+              as DocumentReference<Object>;
+          break;
+        case 'xray':
+          result.xray = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'blood_test':
+          result.bloodTest = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'ct_scan':
+          result.ctScan = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool;
+          break;
+        case 'patient_name':
+          result.patientName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'user_ref':
+          result.userRef = serializers.deserialize(value,
+                  specifiedType: const FullType(
+                      DocumentReference, const [const FullType(Object)]))
+              as DocumentReference<Object>;
+          break;
+        case 'date_time':
+          result.dateTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime;
           break;
-        case 'appointmentType':
-          result.appointmentType = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'appointmentEmail':
-          result.appointmentEmail = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'photo_url':
-          result.photoUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'uid':
-          result.uid = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'created_time':
-          result.createdTime = serializers.deserialize(value,
-              specifiedType: const FullType(DateTime)) as DateTime;
-          break;
-        case 'phone_number':
-          result.phoneNumber = serializers.deserialize(value,
+        case 'type':
+          result.type = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'Document__Reference__Field':
@@ -194,29 +200,29 @@ class _$AppointmentsRecordSerializer
 
 class _$AppointmentsRecord extends AppointmentsRecord {
   @override
-  final String appointmentName;
+  final DocumentReference<Object> patientRef;
   @override
-  final String appointmentDescription;
+  final String tokenNum;
   @override
-  final DocumentReference<Object> appointmentPerson;
+  final String doctor;
   @override
-  final DateTime appointmentTime;
+  final bool valet;
   @override
-  final String appointmentType;
+  final DocumentReference<Object> location;
   @override
-  final String appointmentEmail;
+  final bool xray;
   @override
-  final String email;
+  final bool bloodTest;
   @override
-  final String displayName;
+  final bool ctScan;
   @override
-  final String photoUrl;
+  final String patientName;
   @override
-  final String uid;
+  final DocumentReference<Object> userRef;
   @override
-  final DateTime createdTime;
+  final DateTime dateTime;
   @override
-  final String phoneNumber;
+  final String type;
   @override
   final DocumentReference<Object> reference;
 
@@ -225,18 +231,18 @@ class _$AppointmentsRecord extends AppointmentsRecord {
       (new AppointmentsRecordBuilder()..update(updates)).build();
 
   _$AppointmentsRecord._(
-      {this.appointmentName,
-      this.appointmentDescription,
-      this.appointmentPerson,
-      this.appointmentTime,
-      this.appointmentType,
-      this.appointmentEmail,
-      this.email,
-      this.displayName,
-      this.photoUrl,
-      this.uid,
-      this.createdTime,
-      this.phoneNumber,
+      {this.patientRef,
+      this.tokenNum,
+      this.doctor,
+      this.valet,
+      this.location,
+      this.xray,
+      this.bloodTest,
+      this.ctScan,
+      this.patientName,
+      this.userRef,
+      this.dateTime,
+      this.type,
       this.reference})
       : super._();
 
@@ -253,18 +259,18 @@ class _$AppointmentsRecord extends AppointmentsRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AppointmentsRecord &&
-        appointmentName == other.appointmentName &&
-        appointmentDescription == other.appointmentDescription &&
-        appointmentPerson == other.appointmentPerson &&
-        appointmentTime == other.appointmentTime &&
-        appointmentType == other.appointmentType &&
-        appointmentEmail == other.appointmentEmail &&
-        email == other.email &&
-        displayName == other.displayName &&
-        photoUrl == other.photoUrl &&
-        uid == other.uid &&
-        createdTime == other.createdTime &&
-        phoneNumber == other.phoneNumber &&
+        patientRef == other.patientRef &&
+        tokenNum == other.tokenNum &&
+        doctor == other.doctor &&
+        valet == other.valet &&
+        location == other.location &&
+        xray == other.xray &&
+        bloodTest == other.bloodTest &&
+        ctScan == other.ctScan &&
+        patientName == other.patientName &&
+        userRef == other.userRef &&
+        dateTime == other.dateTime &&
+        type == other.type &&
         reference == other.reference;
   }
 
@@ -281,41 +287,36 @@ class _$AppointmentsRecord extends AppointmentsRecord {
                                     $jc(
                                         $jc(
                                             $jc(
-                                                $jc(
-                                                    $jc(
-                                                        0,
-                                                        appointmentName
-                                                            .hashCode),
-                                                    appointmentDescription
-                                                        .hashCode),
-                                                appointmentPerson.hashCode),
-                                            appointmentTime.hashCode),
-                                        appointmentType.hashCode),
-                                    appointmentEmail.hashCode),
-                                email.hashCode),
-                            displayName.hashCode),
-                        photoUrl.hashCode),
-                    uid.hashCode),
-                createdTime.hashCode),
-            phoneNumber.hashCode),
+                                                $jc($jc(0, patientRef.hashCode),
+                                                    tokenNum.hashCode),
+                                                doctor.hashCode),
+                                            valet.hashCode),
+                                        location.hashCode),
+                                    xray.hashCode),
+                                bloodTest.hashCode),
+                            ctScan.hashCode),
+                        patientName.hashCode),
+                    userRef.hashCode),
+                dateTime.hashCode),
+            type.hashCode),
         reference.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('AppointmentsRecord')
-          ..add('appointmentName', appointmentName)
-          ..add('appointmentDescription', appointmentDescription)
-          ..add('appointmentPerson', appointmentPerson)
-          ..add('appointmentTime', appointmentTime)
-          ..add('appointmentType', appointmentType)
-          ..add('appointmentEmail', appointmentEmail)
-          ..add('email', email)
-          ..add('displayName', displayName)
-          ..add('photoUrl', photoUrl)
-          ..add('uid', uid)
-          ..add('createdTime', createdTime)
-          ..add('phoneNumber', phoneNumber)
+          ..add('patientRef', patientRef)
+          ..add('tokenNum', tokenNum)
+          ..add('doctor', doctor)
+          ..add('valet', valet)
+          ..add('location', location)
+          ..add('xray', xray)
+          ..add('bloodTest', bloodTest)
+          ..add('ctScan', ctScan)
+          ..add('patientName', patientName)
+          ..add('userRef', userRef)
+          ..add('dateTime', dateTime)
+          ..add('type', type)
           ..add('reference', reference))
         .toString();
   }
@@ -325,59 +326,55 @@ class AppointmentsRecordBuilder
     implements Builder<AppointmentsRecord, AppointmentsRecordBuilder> {
   _$AppointmentsRecord _$v;
 
-  String _appointmentName;
-  String get appointmentName => _$this._appointmentName;
-  set appointmentName(String appointmentName) =>
-      _$this._appointmentName = appointmentName;
+  DocumentReference<Object> _patientRef;
+  DocumentReference<Object> get patientRef => _$this._patientRef;
+  set patientRef(DocumentReference<Object> patientRef) =>
+      _$this._patientRef = patientRef;
 
-  String _appointmentDescription;
-  String get appointmentDescription => _$this._appointmentDescription;
-  set appointmentDescription(String appointmentDescription) =>
-      _$this._appointmentDescription = appointmentDescription;
+  String _tokenNum;
+  String get tokenNum => _$this._tokenNum;
+  set tokenNum(String tokenNum) => _$this._tokenNum = tokenNum;
 
-  DocumentReference<Object> _appointmentPerson;
-  DocumentReference<Object> get appointmentPerson => _$this._appointmentPerson;
-  set appointmentPerson(DocumentReference<Object> appointmentPerson) =>
-      _$this._appointmentPerson = appointmentPerson;
+  String _doctor;
+  String get doctor => _$this._doctor;
+  set doctor(String doctor) => _$this._doctor = doctor;
 
-  DateTime _appointmentTime;
-  DateTime get appointmentTime => _$this._appointmentTime;
-  set appointmentTime(DateTime appointmentTime) =>
-      _$this._appointmentTime = appointmentTime;
+  bool _valet;
+  bool get valet => _$this._valet;
+  set valet(bool valet) => _$this._valet = valet;
 
-  String _appointmentType;
-  String get appointmentType => _$this._appointmentType;
-  set appointmentType(String appointmentType) =>
-      _$this._appointmentType = appointmentType;
+  DocumentReference<Object> _location;
+  DocumentReference<Object> get location => _$this._location;
+  set location(DocumentReference<Object> location) =>
+      _$this._location = location;
 
-  String _appointmentEmail;
-  String get appointmentEmail => _$this._appointmentEmail;
-  set appointmentEmail(String appointmentEmail) =>
-      _$this._appointmentEmail = appointmentEmail;
+  bool _xray;
+  bool get xray => _$this._xray;
+  set xray(bool xray) => _$this._xray = xray;
 
-  String _email;
-  String get email => _$this._email;
-  set email(String email) => _$this._email = email;
+  bool _bloodTest;
+  bool get bloodTest => _$this._bloodTest;
+  set bloodTest(bool bloodTest) => _$this._bloodTest = bloodTest;
 
-  String _displayName;
-  String get displayName => _$this._displayName;
-  set displayName(String displayName) => _$this._displayName = displayName;
+  bool _ctScan;
+  bool get ctScan => _$this._ctScan;
+  set ctScan(bool ctScan) => _$this._ctScan = ctScan;
 
-  String _photoUrl;
-  String get photoUrl => _$this._photoUrl;
-  set photoUrl(String photoUrl) => _$this._photoUrl = photoUrl;
+  String _patientName;
+  String get patientName => _$this._patientName;
+  set patientName(String patientName) => _$this._patientName = patientName;
 
-  String _uid;
-  String get uid => _$this._uid;
-  set uid(String uid) => _$this._uid = uid;
+  DocumentReference<Object> _userRef;
+  DocumentReference<Object> get userRef => _$this._userRef;
+  set userRef(DocumentReference<Object> userRef) => _$this._userRef = userRef;
 
-  DateTime _createdTime;
-  DateTime get createdTime => _$this._createdTime;
-  set createdTime(DateTime createdTime) => _$this._createdTime = createdTime;
+  DateTime _dateTime;
+  DateTime get dateTime => _$this._dateTime;
+  set dateTime(DateTime dateTime) => _$this._dateTime = dateTime;
 
-  String _phoneNumber;
-  String get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String phoneNumber) => _$this._phoneNumber = phoneNumber;
+  String _type;
+  String get type => _$this._type;
+  set type(String type) => _$this._type = type;
 
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
@@ -391,18 +388,18 @@ class AppointmentsRecordBuilder
   AppointmentsRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _appointmentName = $v.appointmentName;
-      _appointmentDescription = $v.appointmentDescription;
-      _appointmentPerson = $v.appointmentPerson;
-      _appointmentTime = $v.appointmentTime;
-      _appointmentType = $v.appointmentType;
-      _appointmentEmail = $v.appointmentEmail;
-      _email = $v.email;
-      _displayName = $v.displayName;
-      _photoUrl = $v.photoUrl;
-      _uid = $v.uid;
-      _createdTime = $v.createdTime;
-      _phoneNumber = $v.phoneNumber;
+      _patientRef = $v.patientRef;
+      _tokenNum = $v.tokenNum;
+      _doctor = $v.doctor;
+      _valet = $v.valet;
+      _location = $v.location;
+      _xray = $v.xray;
+      _bloodTest = $v.bloodTest;
+      _ctScan = $v.ctScan;
+      _patientName = $v.patientName;
+      _userRef = $v.userRef;
+      _dateTime = $v.dateTime;
+      _type = $v.type;
       _reference = $v.reference;
       _$v = null;
     }
@@ -424,18 +421,18 @@ class AppointmentsRecordBuilder
   _$AppointmentsRecord build() {
     final _$result = _$v ??
         new _$AppointmentsRecord._(
-            appointmentName: appointmentName,
-            appointmentDescription: appointmentDescription,
-            appointmentPerson: appointmentPerson,
-            appointmentTime: appointmentTime,
-            appointmentType: appointmentType,
-            appointmentEmail: appointmentEmail,
-            email: email,
-            displayName: displayName,
-            photoUrl: photoUrl,
-            uid: uid,
-            createdTime: createdTime,
-            phoneNumber: phoneNumber,
+            patientRef: patientRef,
+            tokenNum: tokenNum,
+            doctor: doctor,
+            valet: valet,
+            location: location,
+            xray: xray,
+            bloodTest: bloodTest,
+            ctScan: ctScan,
+            patientName: patientName,
+            userRef: userRef,
+            dateTime: dateTime,
+            type: type,
             reference: reference);
     replace(_$result);
     return _$result;

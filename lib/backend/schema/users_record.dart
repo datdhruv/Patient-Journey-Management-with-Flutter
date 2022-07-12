@@ -14,22 +14,20 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get displayName;
 
   @nullable
-  String get email;
+  int get age;
 
   @nullable
-  String get password;
+  String get userSex;
+
+  @nullable
+  String get email;
 
   @nullable
   String get uid;
 
   @nullable
-  int get age;
-
-  @nullable
-  String get ailments;
-
-  @nullable
-  LatLng get location;
+  @BuiltValueField(wireName: 'created_time')
+  DateTime get createdTime;
 
   @nullable
   @BuiltValueField(wireName: 'phone_number')
@@ -40,11 +38,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get photoUrl;
 
   @nullable
-  @BuiltValueField(wireName: 'created_time')
-  DateTime get createdTime;
-
-  @nullable
-  String get userSex;
+  @BuiltValueField(wireName: 'current_name')
+  String get currentName;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -52,14 +47,13 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   static void _initializeBuilder(UsersRecordBuilder builder) => builder
     ..displayName = ''
-    ..email = ''
-    ..password = ''
-    ..uid = ''
     ..age = 0
-    ..ailments = ''
+    ..userSex = ''
+    ..email = ''
+    ..uid = ''
     ..phoneNumber = ''
     ..photoUrl = ''
-    ..userSex = '';
+    ..currentName = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -84,28 +78,24 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
 Map<String, dynamic> createUsersRecordData({
   String displayName,
-  String email,
-  String password,
-  String uid,
   int age,
-  String ailments,
-  LatLng location,
+  String userSex,
+  String email,
+  String uid,
+  DateTime createdTime,
   String phoneNumber,
   String photoUrl,
-  DateTime createdTime,
-  String userSex,
+  String currentName,
 }) =>
     serializers.toFirestore(
         UsersRecord.serializer,
         UsersRecord((u) => u
           ..displayName = displayName
-          ..email = email
-          ..password = password
-          ..uid = uid
           ..age = age
-          ..ailments = ailments
-          ..location = location
+          ..userSex = userSex
+          ..email = email
+          ..uid = uid
+          ..createdTime = createdTime
           ..phoneNumber = phoneNumber
           ..photoUrl = photoUrl
-          ..createdTime = createdTime
-          ..userSex = userSex));
+          ..currentName = currentName));
