@@ -7,6 +7,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../maps_parking/maps_parking_widget.dart';
 import '../maps_valet/maps_valet_widget.dart';
+import '../way_finder/way_finder_widget.dart';
 import '../custom_code/widgets/index.dart' as custom_widgets;
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -45,7 +46,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
         child: SizedBox(
           width: 40,
           height: 40,
-          child: SpinKitPumpingHeart(
+          child: SpinKitRing(
             color: FlutterFlowTheme.of(context).primaryColor,
             size: 40,
           ),
@@ -61,7 +62,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
             child: SizedBox(
               width: 40,
               height: 40,
-              child: SpinKitPumpingHeart(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 40,
               ),
@@ -103,7 +104,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                   child: SizedBox(
                     width: 40,
                     height: 40,
-                    child: SpinKitPumpingHeart(
+                    child: SpinKitRing(
                       color: FlutterFlowTheme.of(context).primaryColor,
                       size: 40,
                     ),
@@ -314,7 +315,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -354,7 +355,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                       child: SizedBox(
                                         width: 40,
                                         height: 40,
-                                        child: SpinKitPumpingHeart(
+                                        child: SpinKitRing(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                           size: 40,
@@ -374,6 +375,8 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                           : null;
                                   return Row(
                                     mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -400,47 +403,43 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                               fontSize: 22,
                                             ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 0, 0, 7),
-                                        child: FlutterFlowIconButton(
-                                          borderColor: Colors.transparent,
-                                          borderRadius: 30,
-                                          buttonSize: 28,
-                                          icon: Icon(
-                                            Icons.location_on,
-                                            color: FlutterFlowTheme.of(context)
-                                                .tertiaryColor,
-                                            size: 25,
-                                          ),
-                                          onPressed: () async {
-                                            if ((appointmentDetailsAppointmentsRecord
-                                                    .valet) ==
-                                                true) {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      MapsValetWidget(
-                                                    valetLocation:
-                                                        rowValetAddressRecord,
-                                                  ),
-                                                ),
-                                              );
-                                            } else {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      MapsParkingWidget(
-                                                    parkingLocation:
-                                                        rowParkingAddressRecord,
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                          },
+                                      FlutterFlowIconButton(
+                                        borderColor: Colors.transparent,
+                                        borderRadius: 30,
+                                        buttonSize: 60,
+                                        icon: Icon(
+                                          Icons.location_on,
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiaryColor,
+                                          size: 30,
                                         ),
+                                        onPressed: () async {
+                                          if ((appointmentDetailsAppointmentsRecord
+                                                  .valet) ==
+                                              true) {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MapsValetWidget(
+                                                  valetLocation:
+                                                      rowValetAddressRecord,
+                                                ),
+                                              ),
+                                            );
+                                          } else {
+                                            await Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    MapsParkingWidget(
+                                                  parkingLocation:
+                                                      rowParkingAddressRecord,
+                                                ),
+                                              ),
+                                            );
+                                          }
+                                        },
                                       ),
                                     ],
                                   );
@@ -466,7 +465,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -506,7 +505,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                       child: SizedBox(
                                         width: 40,
                                         height: 40,
-                                        child: SpinKitPumpingHeart(
+                                        child: SpinKitRing(
                                           color: FlutterFlowTheme.of(context)
                                               .primaryColor,
                                           size: 40,
@@ -547,7 +546,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                               child: SizedBox(
                                                 width: 40,
                                                 height: 40,
-                                                child: SpinKitPumpingHeart(
+                                                child: SpinKitRing(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primaryColor,
@@ -561,39 +560,58 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                           return Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(8, 0, 8, 0),
-                                                child: Text(
-                                                  'Travel Time',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        fontSize: 18,
+                                              if ((rowGetTimeToTravelResponse
+                                                          ?.succeeded ??
+                                                      true) ??
+                                                  true)
+                                                Row(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  8, 0, 8, 0),
+                                                      child: Text(
+                                                        'Travel Time',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  fontSize: 18,
+                                                                ),
                                                       ),
-                                                ),
-                                              ),
-                                              Text(
-                                                GetTimeToTravelCall.timeToReach(
-                                                  (rowGetTimeToTravelResponse
-                                                          ?.jsonBody ??
-                                                      ''),
-                                                ).toString(),
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color:
+                                                    ),
+                                                    Text(
+                                                      valueOrDefault<String>(
+                                                        functions.secsToHrsMins(
+                                                            GetTimeToTravelCall
+                                                                .timeToReach(
+                                                          (rowGetTimeToTravelResponse
+                                                                  ?.jsonBody ??
+                                                              ''),
+                                                        )),
+                                                        'null',
+                                                      ),
+                                                      style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .secondaryColor,
-                                                      fontSize: 22,
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Lexend Deca',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryColor,
+                                                                fontSize: 22,
+                                                              ),
                                                     ),
-                                              ),
+                                                  ],
+                                                ),
                                             ],
                                           );
                                         },
@@ -644,124 +662,127 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                         ],
                       ),
                     ),
-                    if ((appointmentDetailsAppointmentsRecord.xray) == true)
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                              child: Text(
-                                'X-Ray',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontSize: 18,
-                                    ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
-                                child: Text(
-                                  columnMainContentHospitalsRecord.xray,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        fontSize: 22,
-                                      ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                      child: StreamBuilder<List<TestsRecord>>(
+                        stream: queryTestsRecord(
+                          queryBuilder: (testsRecord) => testsRecord
+                              .where('app_ref',
+                                  isEqualTo: widget.appointmentDetails)
+                              .orderBy('order_seq'),
+                        ),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 40,
+                                height: 40,
+                                child: SpinKitRing(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  size: 40,
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    if ((appointmentDetailsAppointmentsRecord.bloodTest) ==
-                        true)
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                              child: Text(
-                                'Blood Test',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontSize: 18,
-                                    ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
+                            );
+                          }
+                          List<TestsRecord> listViewTestsRecordList =
+                              snapshot.data;
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewTestsRecordList.length,
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewTestsRecord =
+                                  listViewTestsRecordList[listViewIndex];
+                              return Padding(
                                 padding:
-                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
-                                child: Text(
-                                  columnMainContentHospitalsRecord.bloodTest,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        fontSize: 22,
-                                      ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    if ((appointmentDetailsAppointmentsRecord.ctScan) == true)
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 5, 10, 5),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
-                              child: Text(
-                                'CT-Scan',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      fontSize: 18,
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 0, 5),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 3,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Container(
+                                    width: MediaQuery.of(context).size.width,
+                                    height: 50,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .darkBackground,
+                                      borderRadius: BorderRadius.circular(8),
                                     ),
-                              ),
-                            ),
-                            Expanded(
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
-                                child: Text(
-                                  columnMainContentHospitalsRecord.ctScan,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Lexend Deca',
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryColor,
-                                        fontSize: 22,
-                                      ),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Expanded(
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(8, 0, 0, 0),
+                                                child: Text(
+                                                  listViewTestsRecord.name,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        fontSize: 18,
+                                                      ),
+                                                ),
+                                              ),
+                                              FlutterFlowIconButton(
+                                                borderColor: Colors.transparent,
+                                                borderRadius: 30,
+                                                borderWidth: 1,
+                                                buttonSize: 60,
+                                                icon: Icon(
+                                                  Icons.directions,
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .tertiary400,
+                                                  size: 30,
+                                                ),
+                                                onPressed: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          WayFinderWidget(
+                                                        hospitalRef:
+                                                            columnMainContentHospitalsRecord
+                                                                .reference,
+                                                        floor:
+                                                            listViewTestsRecord
+                                                                .floor,
+                                                        source:
+                                                            listViewTestsRecord
+                                                                .source,
+                                                        dest:
+                                                            listViewTestsRecord
+                                                                .destination,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ],
-                        ),
+                              );
+                            },
+                          );
+                        },
                       ),
+                    ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
                       child: Row(
@@ -778,11 +799,10 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                             alignment: AlignmentDirectional(0, 0),
                             child: ToggleIcon(
                               onPressed: () async {
-                                final appointmentsUpdateData =
-                                    createAppointmentsRecordData(
-                                  valet: !appointmentDetailsAppointmentsRecord
+                                final appointmentsUpdateData = {
+                                  'valet': !appointmentDetailsAppointmentsRecord
                                       .valet,
-                                );
+                                };
                                 await appointmentDetailsAppointmentsRecord
                                     .reference
                                     .update(appointmentsUpdateData);
@@ -804,7 +824,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                       child: StreamBuilder<HospitalsRecord>(
                         stream: HospitalsRecord.getDocument(
                             appointmentDetailsAppointmentsRecord.location),
@@ -815,7 +835,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: SpinKitPumpingHeart(
+                                child: SpinKitRing(
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
                                   size: 40,

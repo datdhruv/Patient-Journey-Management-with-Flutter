@@ -65,7 +65,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
             child: SizedBox(
               width: 40,
               height: 40,
-              child: SpinKitPumpingHeart(
+              child: SpinKitRing(
                 color: FlutterFlowTheme.of(context).primaryColor,
                 size: 40,
               ),
@@ -214,7 +214,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                               child: SizedBox(
                                 width: 40,
                                 height: 40,
-                                child: SpinKitPumpingHeart(
+                                child: SpinKitRing(
                                   color:
                                       FlutterFlowTheme.of(context).primaryColor,
                                   size: 40,
@@ -356,8 +356,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                     child: SizedBox(
                                                       width: 40,
                                                       height: 40,
-                                                      child:
-                                                          SpinKitPumpingHeart(
+                                                      child: SpinKitRing(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -395,7 +394,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                               width: 40,
                                                               height: 40,
                                                               child:
-                                                                  SpinKitPumpingHeart(
+                                                                  SpinKitRing(
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryColor,
@@ -456,7 +455,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                                         height:
                                                                             40,
                                                                         child:
-                                                                            SpinKitPumpingHeart(
+                                                                            SpinKitRing(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).primaryColor,
                                                                           size:

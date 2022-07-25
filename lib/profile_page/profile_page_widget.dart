@@ -94,7 +94,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                   child: SizedBox(
                     width: 40,
                     height: 40,
-                    child: SpinKitPumpingHeart(
+                    child: SpinKitRing(
                       color: FlutterFlowTheme.of(context).primaryColor,
                       size: 40,
                     ),
@@ -128,7 +128,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -186,7 +186,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         child: SizedBox(
                                           width: 40,
                                           height: 40,
-                                          child: SpinKitPumpingHeart(
+                                          child: SpinKitRing(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
                                             size: 40,
@@ -307,7 +307,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -373,7 +373,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -462,7 +462,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             child: SizedBox(
                               width: 40,
                               height: 40,
-                              child: SpinKitPumpingHeart(
+                              child: SpinKitRing(
                                 color:
                                     FlutterFlowTheme.of(context).primaryColor,
                                 size: 40,
@@ -600,7 +600,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   child: SizedBox(
                                                     width: 40,
                                                     height: 40,
-                                                    child: SpinKitPumpingHeart(
+                                                    child: SpinKitRing(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -635,8 +635,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                           child: SizedBox(
                                                             width: 40,
                                                             height: 40,
-                                                            child:
-                                                                SpinKitPumpingHeart(
+                                                            child: SpinKitRing(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryColor,
@@ -696,7 +695,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                       height:
                                                                           40,
                                                                       child:
-                                                                          SpinKitPumpingHeart(
+                                                                          SpinKitRing(
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryColor,
                                                                         size:
@@ -767,7 +766,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                         borderRadius:
                                                                             30,
                                                                         buttonSize:
-                                                                            28,
+                                                                            30,
                                                                         icon:
                                                                             Icon(
                                                                           Icons

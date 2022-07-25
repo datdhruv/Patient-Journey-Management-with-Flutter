@@ -54,7 +54,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: SizedBox(
                           width: 40,
                           height: 40,
-                          child: SpinKitPumpingHeart(
+                          child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primaryColor,
                             size: 40,
                           ),
@@ -145,7 +145,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         child: SizedBox(
                           width: 40,
                           height: 40,
-                          child: SpinKitPumpingHeart(
+                          child: SpinKitRing(
                             color: FlutterFlowTheme.of(context).primaryColor,
                             size: 40,
                           ),
@@ -236,7 +236,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           child: SizedBox(
                                             width: 40,
                                             height: 40,
-                                            child: SpinKitPumpingHeart(
+                                            child: SpinKitRing(
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primaryColor,
@@ -398,7 +398,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         child: SizedBox(
                                           width: 40,
                                           height: 40,
-                                          child: SpinKitPumpingHeart(
+                                          child: SpinKitRing(
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryColor,
                                             size: 40,
@@ -554,8 +554,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           child: SizedBox(
                                                             width: 40,
                                                             height: 40,
-                                                            child:
-                                                                SpinKitPumpingHeart(
+                                                            child: SpinKitRing(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryColor,
@@ -611,7 +610,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 FlutterFlowIconButton(
                                                               borderColor: Colors
                                                                   .transparent,
-                                                              buttonSize: 28,
+                                                              buttonSize: 30,
                                                               icon: Icon(
                                                                 Icons
                                                                     .location_on,
@@ -704,11 +703,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       child: ToggleIcon(
                                                         onPressed: () async {
                                                           final appointmentsUpdateData =
-                                                              createAppointmentsRecordData(
-                                                            valet:
+                                                              {
+                                                            'valet':
                                                                 !appointmentCardAppointmentsRecord
                                                                     .valet,
-                                                          );
+                                                          };
                                                           await appointmentCardAppointmentsRecord
                                                               .reference
                                                               .update(
@@ -753,8 +752,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                           child: SizedBox(
                                                             width: 40,
                                                             height: 40,
-                                                            child:
-                                                                SpinKitPumpingHeart(
+                                                            child: SpinKitRing(
                                                               color: FlutterFlowTheme
                                                                       .of(context)
                                                                   .primaryColor,

@@ -19,17 +19,6 @@ abstract class HospitalsRecord
   String get contactNumber;
 
   @nullable
-  String get xray;
-
-  @nullable
-  @BuiltValueField(wireName: 'blood_test')
-  String get bloodTest;
-
-  @nullable
-  @BuiltValueField(wireName: 'ct_scan')
-  String get ctScan;
-
-  @nullable
   @BuiltValueField(wireName: 'parking_location')
   LatLng get parkingLocation;
 
@@ -38,15 +27,22 @@ abstract class HospitalsRecord
   LatLng get valetLocation;
 
   @nullable
+  @BuiltValueField(wireName: 'location_mapping')
+  BuiltList<String> get locationMapping;
+
+  @nullable
+  @BuiltValueField(wireName: 'floors_mapping')
+  BuiltList<String> get floorsMapping;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(HospitalsRecordBuilder builder) => builder
     ..name = ''
     ..contactNumber = ''
-    ..xray = ''
-    ..bloodTest = ''
-    ..ctScan = '';
+    ..locationMapping = ListBuilder()
+    ..floorsMapping = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('hospitals');
@@ -72,9 +68,6 @@ abstract class HospitalsRecord
 Map<String, dynamic> createHospitalsRecordData({
   String name,
   String contactNumber,
-  String xray,
-  String bloodTest,
-  String ctScan,
   LatLng parkingLocation,
   LatLng valetLocation,
 }) =>
@@ -83,8 +76,7 @@ Map<String, dynamic> createHospitalsRecordData({
         HospitalsRecord((h) => h
           ..name = name
           ..contactNumber = contactNumber
-          ..xray = xray
-          ..bloodTest = bloodTest
-          ..ctScan = ctScan
           ..parkingLocation = parkingLocation
-          ..valetLocation = valetLocation));
+          ..valetLocation = valetLocation
+          ..locationMapping = null
+          ..floorsMapping = null));

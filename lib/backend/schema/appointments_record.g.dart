@@ -58,27 +58,6 @@ class _$AppointmentsRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType(Object)])));
     }
-    value = object.xray;
-    if (value != null) {
-      result
-        ..add('xray')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
-    value = object.bloodTest;
-    if (value != null) {
-      result
-        ..add('blood_test')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
-    value = object.ctScan;
-    if (value != null) {
-      result
-        ..add('ct_scan')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     value = object.patientName;
     if (value != null) {
       result
@@ -155,18 +134,6 @@ class _$AppointmentsRecordSerializer
                       DocumentReference, const [const FullType(Object)]))
               as DocumentReference<Object>;
           break;
-        case 'xray':
-          result.xray = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          break;
-        case 'blood_test':
-          result.bloodTest = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          break;
-        case 'ct_scan':
-          result.ctScan = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool;
-          break;
         case 'patient_name':
           result.patientName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
@@ -210,12 +177,6 @@ class _$AppointmentsRecord extends AppointmentsRecord {
   @override
   final DocumentReference<Object> location;
   @override
-  final bool xray;
-  @override
-  final bool bloodTest;
-  @override
-  final bool ctScan;
-  @override
   final String patientName;
   @override
   final DocumentReference<Object> userRef;
@@ -236,9 +197,6 @@ class _$AppointmentsRecord extends AppointmentsRecord {
       this.doctor,
       this.valet,
       this.location,
-      this.xray,
-      this.bloodTest,
-      this.ctScan,
       this.patientName,
       this.userRef,
       this.dateTime,
@@ -264,9 +222,6 @@ class _$AppointmentsRecord extends AppointmentsRecord {
         doctor == other.doctor &&
         valet == other.valet &&
         location == other.location &&
-        xray == other.xray &&
-        bloodTest == other.bloodTest &&
-        ctScan == other.ctScan &&
         patientName == other.patientName &&
         userRef == other.userRef &&
         dateTime == other.dateTime &&
@@ -284,17 +239,11 @@ class _$AppointmentsRecord extends AppointmentsRecord {
                         $jc(
                             $jc(
                                 $jc(
-                                    $jc(
-                                        $jc(
-                                            $jc(
-                                                $jc($jc(0, patientRef.hashCode),
-                                                    tokenNum.hashCode),
-                                                doctor.hashCode),
-                                            valet.hashCode),
-                                        location.hashCode),
-                                    xray.hashCode),
-                                bloodTest.hashCode),
-                            ctScan.hashCode),
+                                    $jc($jc(0, patientRef.hashCode),
+                                        tokenNum.hashCode),
+                                    doctor.hashCode),
+                                valet.hashCode),
+                            location.hashCode),
                         patientName.hashCode),
                     userRef.hashCode),
                 dateTime.hashCode),
@@ -310,9 +259,6 @@ class _$AppointmentsRecord extends AppointmentsRecord {
           ..add('doctor', doctor)
           ..add('valet', valet)
           ..add('location', location)
-          ..add('xray', xray)
-          ..add('bloodTest', bloodTest)
-          ..add('ctScan', ctScan)
           ..add('patientName', patientName)
           ..add('userRef', userRef)
           ..add('dateTime', dateTime)
@@ -348,18 +294,6 @@ class AppointmentsRecordBuilder
   set location(DocumentReference<Object> location) =>
       _$this._location = location;
 
-  bool _xray;
-  bool get xray => _$this._xray;
-  set xray(bool xray) => _$this._xray = xray;
-
-  bool _bloodTest;
-  bool get bloodTest => _$this._bloodTest;
-  set bloodTest(bool bloodTest) => _$this._bloodTest = bloodTest;
-
-  bool _ctScan;
-  bool get ctScan => _$this._ctScan;
-  set ctScan(bool ctScan) => _$this._ctScan = ctScan;
-
   String _patientName;
   String get patientName => _$this._patientName;
   set patientName(String patientName) => _$this._patientName = patientName;
@@ -393,9 +327,6 @@ class AppointmentsRecordBuilder
       _doctor = $v.doctor;
       _valet = $v.valet;
       _location = $v.location;
-      _xray = $v.xray;
-      _bloodTest = $v.bloodTest;
-      _ctScan = $v.ctScan;
       _patientName = $v.patientName;
       _userRef = $v.userRef;
       _dateTime = $v.dateTime;
@@ -426,9 +357,6 @@ class AppointmentsRecordBuilder
             doctor: doctor,
             valet: valet,
             location: location,
-            xray: xray,
-            bloodTest: bloodTest,
-            ctScan: ctScan,
             patientName: patientName,
             userRef: userRef,
             dateTime: dateTime,

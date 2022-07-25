@@ -19,3 +19,31 @@ String geoPointToString(LatLng geoPoint) {
   // convert input LatLng type to string type
   return '${geoPoint.latitude},${geoPoint.longitude}';
 }
+
+String secsToHrsMins(double num) {
+  var h = num >= 3600 ? (num / 3600).floor() : 0;
+  var m = num % 3600 ~/ 60;
+  return h > 0 ? "$h Hours & $m mins" : "$m mins";
+}
+
+String trimmingOptions1(String option) {
+  return option.split(".")[0].substring(2);
+}
+
+String trimmingOptions2(String option) {
+  return option.split(".")[0];
+}
+
+List<String> populateSubDrops(
+  List<String> list,
+  String match,
+) {
+  String nmatch = match.split(" ")[2].substring(1, 3);
+  List<String> filtered = [];
+  list.forEach((el) {
+    if (el.startsWith(nmatch)) {
+      filtered.add(el);
+    }
+  });
+  return filtered;
+}

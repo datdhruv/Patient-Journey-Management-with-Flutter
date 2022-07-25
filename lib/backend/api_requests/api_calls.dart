@@ -25,3 +25,22 @@ class GetTimeToTravelCall {
         r'''$.durations[0][1]''',
       );
 }
+
+class MessagesCall {
+  static Future<ApiCallResponse> call() {
+    return ApiManager.instance.makeApiCall(
+      callName: 'messages',
+      apiUrl:
+          ' https://api.twilio.com/2010-04-01/Accounts/ACbe4163d3a25209cf6e3190df428c013f/Messages.json',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization':
+            'Basic QUNiZTQxNjNkM2EyNTIwOWNmNmUzMTkwZGY0MjhjMDEzZjoyMDI0N2I5OGRlYTliNjgyNTA4ZjZiYzZlNmJlOTlkMg==',
+      },
+      params: {},
+      bodyType: BodyType.X_WWW_FORM_URL_ENCODED,
+      returnBody: true,
+    );
+  }
+}

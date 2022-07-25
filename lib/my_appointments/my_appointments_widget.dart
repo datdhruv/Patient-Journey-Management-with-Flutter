@@ -178,7 +178,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                       child: SizedBox(
                         width: 40,
                         height: 40,
-                        child: SpinKitPumpingHeart(
+                        child: SpinKitRing(
                           color: FlutterFlowTheme.of(context).primaryColor,
                           size: 40,
                         ),
@@ -327,7 +327,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                             child: SizedBox(
                                               width: 40,
                                               height: 40,
-                                              child: SpinKitPumpingHeart(
+                                              child: SpinKitRing(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryColor,
@@ -360,8 +360,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                     child: SizedBox(
                                                       width: 40,
                                                       height: 40,
-                                                      child:
-                                                          SpinKitPumpingHeart(
+                                                      child: SpinKitRing(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -416,7 +415,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                                 width: 40,
                                                                 height: 40,
                                                                 child:
-                                                                    SpinKitPumpingHeart(
+                                                                    SpinKitRing(
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primaryColor,
@@ -489,7 +488,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                                   borderRadius:
                                                                       30,
                                                                   buttonSize:
-                                                                      28,
+                                                                      30,
                                                                   icon: Icon(
                                                                     Icons
                                                                         .location_on,

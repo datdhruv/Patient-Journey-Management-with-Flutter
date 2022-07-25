@@ -35,27 +35,6 @@ class _$HospitalsRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.xray;
-    if (value != null) {
-      result
-        ..add('xray')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.bloodTest;
-    if (value != null) {
-      result
-        ..add('blood_test')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.ctScan;
-    if (value != null) {
-      result
-        ..add('ct_scan')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.parkingLocation;
     if (value != null) {
       result
@@ -69,6 +48,22 @@ class _$HospitalsRecordSerializer
         ..add('valet_location')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(LatLng)));
+    }
+    value = object.locationMapping;
+    if (value != null) {
+      result
+        ..add('location_mapping')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
+    }
+    value = object.floorsMapping;
+    if (value != null) {
+      result
+        ..add('floors_mapping')
+        ..add(serializers.serialize(value,
+            specifiedType:
+                const FullType(BuiltList, const [const FullType(String)])));
     }
     value = object.reference;
     if (value != null) {
@@ -101,18 +96,6 @@ class _$HospitalsRecordSerializer
           result.contactNumber = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
-        case 'xray':
-          result.xray = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'blood_test':
-          result.bloodTest = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
-        case 'ct_scan':
-          result.ctScan = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'parking_location':
           result.parkingLocation = serializers.deserialize(value,
               specifiedType: const FullType(LatLng)) as LatLng;
@@ -120,6 +103,18 @@ class _$HospitalsRecordSerializer
         case 'valet_location':
           result.valetLocation = serializers.deserialize(value,
               specifiedType: const FullType(LatLng)) as LatLng;
+          break;
+        case 'location_mapping':
+          result.locationMapping.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(String)]))
+              as BuiltList<Object>);
+          break;
+        case 'floors_mapping':
+          result.floorsMapping.replace(serializers.deserialize(value,
+                  specifiedType:
+                      const FullType(BuiltList, const [const FullType(String)]))
+              as BuiltList<Object>);
           break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
@@ -140,15 +135,13 @@ class _$HospitalsRecord extends HospitalsRecord {
   @override
   final String contactNumber;
   @override
-  final String xray;
-  @override
-  final String bloodTest;
-  @override
-  final String ctScan;
-  @override
   final LatLng parkingLocation;
   @override
   final LatLng valetLocation;
+  @override
+  final BuiltList<String> locationMapping;
+  @override
+  final BuiltList<String> floorsMapping;
   @override
   final DocumentReference<Object> reference;
 
@@ -158,11 +151,10 @@ class _$HospitalsRecord extends HospitalsRecord {
   _$HospitalsRecord._(
       {this.name,
       this.contactNumber,
-      this.xray,
-      this.bloodTest,
-      this.ctScan,
       this.parkingLocation,
       this.valetLocation,
+      this.locationMapping,
+      this.floorsMapping,
       this.reference})
       : super._();
 
@@ -180,11 +172,10 @@ class _$HospitalsRecord extends HospitalsRecord {
     return other is HospitalsRecord &&
         name == other.name &&
         contactNumber == other.contactNumber &&
-        xray == other.xray &&
-        bloodTest == other.bloodTest &&
-        ctScan == other.ctScan &&
         parkingLocation == other.parkingLocation &&
         valetLocation == other.valetLocation &&
+        locationMapping == other.locationMapping &&
+        floorsMapping == other.floorsMapping &&
         reference == other.reference;
   }
 
@@ -194,13 +185,11 @@ class _$HospitalsRecord extends HospitalsRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc(
-                        $jc($jc($jc(0, name.hashCode), contactNumber.hashCode),
-                            xray.hashCode),
-                        bloodTest.hashCode),
-                    ctScan.hashCode),
-                parkingLocation.hashCode),
-            valetLocation.hashCode),
+                    $jc($jc($jc(0, name.hashCode), contactNumber.hashCode),
+                        parkingLocation.hashCode),
+                    valetLocation.hashCode),
+                locationMapping.hashCode),
+            floorsMapping.hashCode),
         reference.hashCode));
   }
 
@@ -209,11 +198,10 @@ class _$HospitalsRecord extends HospitalsRecord {
     return (newBuiltValueToStringHelper('HospitalsRecord')
           ..add('name', name)
           ..add('contactNumber', contactNumber)
-          ..add('xray', xray)
-          ..add('bloodTest', bloodTest)
-          ..add('ctScan', ctScan)
           ..add('parkingLocation', parkingLocation)
           ..add('valetLocation', valetLocation)
+          ..add('locationMapping', locationMapping)
+          ..add('floorsMapping', floorsMapping)
           ..add('reference', reference))
         .toString();
   }
@@ -232,18 +220,6 @@ class HospitalsRecordBuilder
   set contactNumber(String contactNumber) =>
       _$this._contactNumber = contactNumber;
 
-  String _xray;
-  String get xray => _$this._xray;
-  set xray(String xray) => _$this._xray = xray;
-
-  String _bloodTest;
-  String get bloodTest => _$this._bloodTest;
-  set bloodTest(String bloodTest) => _$this._bloodTest = bloodTest;
-
-  String _ctScan;
-  String get ctScan => _$this._ctScan;
-  set ctScan(String ctScan) => _$this._ctScan = ctScan;
-
   LatLng _parkingLocation;
   LatLng get parkingLocation => _$this._parkingLocation;
   set parkingLocation(LatLng parkingLocation) =>
@@ -253,6 +229,18 @@ class HospitalsRecordBuilder
   LatLng get valetLocation => _$this._valetLocation;
   set valetLocation(LatLng valetLocation) =>
       _$this._valetLocation = valetLocation;
+
+  ListBuilder<String> _locationMapping;
+  ListBuilder<String> get locationMapping =>
+      _$this._locationMapping ??= new ListBuilder<String>();
+  set locationMapping(ListBuilder<String> locationMapping) =>
+      _$this._locationMapping = locationMapping;
+
+  ListBuilder<String> _floorsMapping;
+  ListBuilder<String> get floorsMapping =>
+      _$this._floorsMapping ??= new ListBuilder<String>();
+  set floorsMapping(ListBuilder<String> floorsMapping) =>
+      _$this._floorsMapping = floorsMapping;
 
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
@@ -268,11 +256,10 @@ class HospitalsRecordBuilder
     if ($v != null) {
       _name = $v.name;
       _contactNumber = $v.contactNumber;
-      _xray = $v.xray;
-      _bloodTest = $v.bloodTest;
-      _ctScan = $v.ctScan;
       _parkingLocation = $v.parkingLocation;
       _valetLocation = $v.valetLocation;
+      _locationMapping = $v.locationMapping?.toBuilder();
+      _floorsMapping = $v.floorsMapping?.toBuilder();
       _reference = $v.reference;
       _$v = null;
     }
@@ -292,16 +279,30 @@ class HospitalsRecordBuilder
 
   @override
   _$HospitalsRecord build() {
-    final _$result = _$v ??
-        new _$HospitalsRecord._(
-            name: name,
-            contactNumber: contactNumber,
-            xray: xray,
-            bloodTest: bloodTest,
-            ctScan: ctScan,
-            parkingLocation: parkingLocation,
-            valetLocation: valetLocation,
-            reference: reference);
+    _$HospitalsRecord _$result;
+    try {
+      _$result = _$v ??
+          new _$HospitalsRecord._(
+              name: name,
+              contactNumber: contactNumber,
+              parkingLocation: parkingLocation,
+              valetLocation: valetLocation,
+              locationMapping: _locationMapping?.build(),
+              floorsMapping: _floorsMapping?.build(),
+              reference: reference);
+    } catch (_) {
+      String _$failedField;
+      try {
+        _$failedField = 'locationMapping';
+        _locationMapping?.build();
+        _$failedField = 'floorsMapping';
+        _floorsMapping?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            'HospitalsRecord', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

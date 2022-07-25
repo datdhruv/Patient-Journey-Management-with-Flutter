@@ -29,17 +29,6 @@ abstract class AppointmentsRecord
   DocumentReference get location;
 
   @nullable
-  bool get xray;
-
-  @nullable
-  @BuiltValueField(wireName: 'blood_test')
-  bool get bloodTest;
-
-  @nullable
-  @BuiltValueField(wireName: 'ct_scan')
-  bool get ctScan;
-
-  @nullable
   @BuiltValueField(wireName: 'patient_name')
   String get patientName;
 
@@ -62,9 +51,6 @@ abstract class AppointmentsRecord
     ..tokenNum = ''
     ..doctor = ''
     ..valet = false
-    ..xray = false
-    ..bloodTest = false
-    ..ctScan = false
     ..patientName = ''
     ..type = '';
 
@@ -96,9 +82,6 @@ Map<String, dynamic> createAppointmentsRecordData({
   String doctor,
   bool valet,
   DocumentReference location,
-  bool xray,
-  bool bloodTest,
-  bool ctScan,
   String patientName,
   DocumentReference userRef,
   DateTime dateTime,
@@ -112,9 +95,6 @@ Map<String, dynamic> createAppointmentsRecordData({
           ..doctor = doctor
           ..valet = valet
           ..location = location
-          ..xray = xray
-          ..bloodTest = bloodTest
-          ..ctScan = ctScan
           ..patientName = patientName
           ..userRef = userRef
           ..dateTime = dateTime

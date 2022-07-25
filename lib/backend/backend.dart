@@ -10,6 +10,9 @@ import 'schema/appointments_record.dart';
 import 'schema/patients_record.dart';
 import 'schema/valet_address_record.dart';
 import 'schema/parking_address_record.dart';
+import 'schema/hospital_paths_record.dart';
+import 'schema/image_paths_record.dart';
+import 'schema/tests_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -23,6 +26,9 @@ export 'schema/appointments_record.dart';
 export 'schema/patients_record.dart';
 export 'schema/valet_address_record.dart';
 export 'schema/parking_address_record.dart';
+export 'schema/hospital_paths_record.dart';
+export 'schema/image_paths_record.dart';
+export 'schema/tests_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Stream<List<UsersRecord>> queryUsersRecord({
@@ -270,6 +276,132 @@ Future<FFFirestorePage<ParkingAddressRecord>> queryParkingAddressRecordPage({
     queryCollectionPage(
       ParkingAddressRecord.collection,
       ParkingAddressRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query HospitalPathsRecords (as a Stream and as a Future).
+Stream<List<HospitalPathsRecord>> queryHospitalPathsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      HospitalPathsRecord.collection,
+      HospitalPathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<HospitalPathsRecord>> queryHospitalPathsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      HospitalPathsRecord.collection,
+      HospitalPathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<HospitalPathsRecord>> queryHospitalPathsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      HospitalPathsRecord.collection,
+      HospitalPathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query ImagePathsRecords (as a Stream and as a Future).
+Stream<List<ImagePathsRecord>> queryImagePathsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      ImagePathsRecord.collection,
+      ImagePathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<ImagePathsRecord>> queryImagePathsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      ImagePathsRecord.collection,
+      ImagePathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<ImagePathsRecord>> queryImagePathsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      ImagePathsRecord.collection,
+      ImagePathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query TestsRecords (as a Stream and as a Future).
+Stream<List<TestsRecord>> queryTestsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      TestsRecord.collection,
+      TestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<TestsRecord>> queryTestsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      TestsRecord.collection,
+      TestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<TestsRecord>> queryTestsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      TestsRecord.collection,
+      TestsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

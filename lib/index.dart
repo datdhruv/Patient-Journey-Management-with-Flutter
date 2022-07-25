@@ -13,3 +13,4 @@ export 'appointment_details_history/appointment_details_history_widget.dart'
 export 'maps_parking/maps_parking_widget.dart' show MapsParkingWidget;
 export 'maps_valet/maps_valet_widget.dart' show MapsValetWidget;
 export 'home_page/home_page_widget.dart' show HomePageWidget;
+export 'way_finder/way_finder_widget.dart' show WayFinderWidget;
