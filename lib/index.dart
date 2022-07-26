@@ -13,6 +13,6 @@ export 'appointment_details/appointment_details_widget.dart'
 export 'appointment_details_history/appointment_details_history_widget.dart'
     show AppointmentDetailsHistoryWidget;
 export 'maps_parking/maps_parking_widget.dart' show MapsParkingWidget;
-export 'maps_valet/maps_valet_widget.dart' show MapsValetWidget;
 export 'home_page/home_page_widget.dart' show HomePageWidget;
+export 'maps_valet/maps_valet_widget.dart' show MapsValetWidget;
 export 'way_finder/way_finder_widget.dart' show WayFinderWidget;

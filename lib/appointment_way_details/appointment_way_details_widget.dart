@@ -349,7 +349,7 @@ class _AppointmentWayDetailsWidgetState
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryColor,
-                                              fontSize: 22,
+                                              fontSize: 18,
                                             ),
                                       ),
                                     ],
@@ -368,7 +368,7 @@ class _AppointmentWayDetailsWidgetState
                                     fontFamily: 'Lexend Deca',
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryColor,
-                                    fontSize: 22,
+                                    fontSize: 18,
                                   ),
                             ),
                           ],

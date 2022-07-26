@@ -13,6 +13,7 @@ import 'schema/parking_address_record.dart';
 import 'schema/hospital_paths_record.dart';
 import 'schema/image_paths_record.dart';
 import 'schema/tests_record.dart';
+import 'schema/def_paths_record.dart';
 import 'schema/serializers.dart';
 
 export 'dart:async' show StreamSubscription;
@@ -29,6 +30,7 @@ export 'schema/parking_address_record.dart';
 export 'schema/hospital_paths_record.dart';
 export 'schema/image_paths_record.dart';
 export 'schema/tests_record.dart';
+export 'schema/def_paths_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Stream<List<UsersRecord>> queryUsersRecord({
@@ -402,6 +404,48 @@ Future<FFFirestorePage<TestsRecord>> queryTestsRecordPage({
     queryCollectionPage(
       TestsRecord.collection,
       TestsRecord.serializer,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    );
+
+/// Functions to query DefPathsRecords (as a Stream and as a Future).
+Stream<List<DefPathsRecord>> queryDefPathsRecord({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DefPathsRecord.collection,
+      DefPathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DefPathsRecord>> queryDefPathsRecordOnce({
+  Query Function(Query) queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DefPathsRecord.collection,
+      DefPathsRecord.serializer,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<FFFirestorePage<DefPathsRecord>> queryDefPathsRecordPage({
+  Query Function(Query) queryBuilder,
+  DocumentSnapshot nextPageMarker,
+  int pageSize,
+  bool isStream,
+}) =>
+    queryCollectionPage(
+      DefPathsRecord.collection,
+      DefPathsRecord.serializer,
       queryBuilder: queryBuilder,
       nextPageMarker: nextPageMarker,
       pageSize: pageSize,

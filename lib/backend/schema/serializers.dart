@@ -9,6 +9,7 @@ import 'parking_address_record.dart';
 import 'hospital_paths_record.dart';
 import 'image_paths_record.dart';
 import 'tests_record.dart';
+import 'def_paths_record.dart';
 
 import 'index.dart';
 
@@ -28,6 +29,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   HospitalPathsRecord,
   ImagePathsRecord,
   TestsRecord,
+  DefPathsRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

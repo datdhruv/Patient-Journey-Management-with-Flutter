@@ -8,6 +8,7 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AppointmentsRecord.serializer)
+      ..add(DefPathsRecord.serializer)
       ..add(HospitalPathsRecord.serializer)
       ..add(HospitalsRecord.serializer)
       ..add(ImagePathsRecord.serializer)

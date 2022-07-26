@@ -197,6 +197,151 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                         children: [
                           Expanded(
                             child: Text(
+                              'Common locations',
+                              style: FlutterFlowTheme.of(context).bodyText1,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 1, 0, 0),
+                          child: StreamBuilder<List<DefPathsRecord>>(
+                            stream: queryDefPathsRecord(
+                              queryBuilder: (defPathsRecord) => defPathsRecord
+                                  .where('app_ref',
+                                      isEqualTo: widget.appointmentDetails)
+                                  .orderBy('order_seq'),
+                            ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 40,
+                                    height: 40,
+                                    child: SpinKitRing(
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      size: 40,
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<DefPathsRecord> listViewDefPathsRecordList =
+                                  snapshot.data;
+                              return ListView.builder(
+                                padding: EdgeInsets.zero,
+                                primary: false,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.horizontal,
+                                itemCount: listViewDefPathsRecordList.length,
+                                itemBuilder: (context, listViewIndex) {
+                                  final listViewDefPathsRecord =
+                                      listViewDefPathsRecordList[listViewIndex];
+                                  return Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        3, 3, 3, 3),
+                                    child: Card(
+                                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                                      color: Color(0xFFF5F5F5),
+                                      elevation: 5,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            flex: 1,
+                                            child: Align(
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(5, 0, 5, 0),
+                                                child: Text(
+                                                  listViewDefPathsRecord.name,
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .subtitle1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Lexend Deca',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryColor,
+                                                      ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Expanded(
+                                            flex: 1,
+                                            child: FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30,
+                                              borderWidth: 1,
+                                              buttonSize: 60,
+                                              icon: Icon(
+                                                Icons.directions,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary400,
+                                                size: 30,
+                                              ),
+                                              onPressed: () async {
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        WayFinderWidget(
+                                                      hospitalRef:
+                                                          columnMainContentHospitalsRecord
+                                                              .reference,
+                                                      floor:
+                                                          listViewDefPathsRecord
+                                                              .floor,
+                                                      source:
+                                                          listViewDefPathsRecord
+                                                              .source,
+                                                      dest:
+                                                          listViewDefPathsRecord
+                                                              .destination,
+                                                    ),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(20, 4, 20, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Text(
                               'Type of Appointment',
                               style: FlutterFlowTheme.of(context).bodyText1,
                             ),
@@ -271,13 +416,20 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                   'MMMMEEEEd',
                                   appointmentDetailsAppointmentsRecord
                                       .dateTime),
-                              style: FlutterFlowTheme.of(context).title1,
+                              style:
+                                  FlutterFlowTheme.of(context).title1.override(
+                                        fontFamily: 'Lexend Deca',
+                                        fontSize: 18,
+                                      ),
                             ),
                           ),
                           Text(
                             dateTimeFormat('jm',
                                 appointmentDetailsAppointmentsRecord.dateTime),
-                            style: FlutterFlowTheme.of(context).title1,
+                            style: FlutterFlowTheme.of(context).title1.override(
+                                  fontFamily: 'Lexend Deca',
+                                  fontSize: 18,
+                                ),
                           ),
                         ],
                       ),
@@ -320,7 +472,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 10, 10, 20),
                       child: StreamBuilder<List<TestsRecord>>(
                         stream: queryTestsRecord(
                           queryBuilder: (testsRecord) => testsRecord
