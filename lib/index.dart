@@ -6,6 +6,8 @@ export 'past_appointments/past_appointments_widget.dart'
     show PastAppointmentsWidget;
 export 'profile_page/profile_page_widget.dart' show ProfilePageWidget;
 export 'maps/maps_widget.dart' show MapsWidget;
+export 'appointment_way_details/appointment_way_details_widget.dart'
+    show AppointmentWayDetailsWidget;
 export 'appointment_details/appointment_details_widget.dart'
     show AppointmentDetailsWidget;
 export 'appointment_details_history/appointment_details_history_widget.dart'

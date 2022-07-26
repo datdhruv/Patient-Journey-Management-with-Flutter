@@ -33,20 +33,6 @@
       ]
     },
     {
-      "collectionGroup": "tests",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "app_ref",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "order_seq",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "appointments",
       "queryScope": "COLLECTION",
       "fields": [
@@ -61,6 +47,20 @@
         {
           "fieldPath": "date_time",
           "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "tests",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "app_ref",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "order_seq",
+          "order": "ASCENDING"
         }
       ]
     }

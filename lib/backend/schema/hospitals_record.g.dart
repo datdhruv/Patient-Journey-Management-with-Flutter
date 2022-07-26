@@ -65,6 +65,20 @@ class _$HospitalsRecordSerializer
             specifiedType:
                 const FullType(BuiltList, const [const FullType(String)])));
     }
+    value = object.gmapParking;
+    if (value != null) {
+      result
+        ..add('gmap_parking')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.gmapValet;
+    if (value != null) {
+      result
+        ..add('gmap_valet')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.reference;
     if (value != null) {
       result
@@ -116,6 +130,14 @@ class _$HospitalsRecordSerializer
                       const FullType(BuiltList, const [const FullType(String)]))
               as BuiltList<Object>);
           break;
+        case 'gmap_parking':
+          result.gmapParking = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'gmap_valet':
+          result.gmapValet = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
         case 'Document__Reference__Field':
           result.reference = serializers.deserialize(value,
                   specifiedType: const FullType(
@@ -143,6 +165,10 @@ class _$HospitalsRecord extends HospitalsRecord {
   @override
   final BuiltList<String> floorsMapping;
   @override
+  final String gmapParking;
+  @override
+  final String gmapValet;
+  @override
   final DocumentReference<Object> reference;
 
   factory _$HospitalsRecord([void Function(HospitalsRecordBuilder) updates]) =>
@@ -155,6 +181,8 @@ class _$HospitalsRecord extends HospitalsRecord {
       this.valetLocation,
       this.locationMapping,
       this.floorsMapping,
+      this.gmapParking,
+      this.gmapValet,
       this.reference})
       : super._();
 
@@ -176,6 +204,8 @@ class _$HospitalsRecord extends HospitalsRecord {
         valetLocation == other.valetLocation &&
         locationMapping == other.locationMapping &&
         floorsMapping == other.floorsMapping &&
+        gmapParking == other.gmapParking &&
+        gmapValet == other.gmapValet &&
         reference == other.reference;
   }
 
@@ -185,11 +215,17 @@ class _$HospitalsRecord extends HospitalsRecord {
         $jc(
             $jc(
                 $jc(
-                    $jc($jc($jc(0, name.hashCode), contactNumber.hashCode),
-                        parkingLocation.hashCode),
-                    valetLocation.hashCode),
-                locationMapping.hashCode),
-            floorsMapping.hashCode),
+                    $jc(
+                        $jc(
+                            $jc(
+                                $jc($jc(0, name.hashCode),
+                                    contactNumber.hashCode),
+                                parkingLocation.hashCode),
+                            valetLocation.hashCode),
+                        locationMapping.hashCode),
+                    floorsMapping.hashCode),
+                gmapParking.hashCode),
+            gmapValet.hashCode),
         reference.hashCode));
   }
 
@@ -202,6 +238,8 @@ class _$HospitalsRecord extends HospitalsRecord {
           ..add('valetLocation', valetLocation)
           ..add('locationMapping', locationMapping)
           ..add('floorsMapping', floorsMapping)
+          ..add('gmapParking', gmapParking)
+          ..add('gmapValet', gmapValet)
           ..add('reference', reference))
         .toString();
   }
@@ -242,6 +280,14 @@ class HospitalsRecordBuilder
   set floorsMapping(ListBuilder<String> floorsMapping) =>
       _$this._floorsMapping = floorsMapping;
 
+  String _gmapParking;
+  String get gmapParking => _$this._gmapParking;
+  set gmapParking(String gmapParking) => _$this._gmapParking = gmapParking;
+
+  String _gmapValet;
+  String get gmapValet => _$this._gmapValet;
+  set gmapValet(String gmapValet) => _$this._gmapValet = gmapValet;
+
   DocumentReference<Object> _reference;
   DocumentReference<Object> get reference => _$this._reference;
   set reference(DocumentReference<Object> reference) =>
@@ -260,6 +306,8 @@ class HospitalsRecordBuilder
       _valetLocation = $v.valetLocation;
       _locationMapping = $v.locationMapping?.toBuilder();
       _floorsMapping = $v.floorsMapping?.toBuilder();
+      _gmapParking = $v.gmapParking;
+      _gmapValet = $v.gmapValet;
       _reference = $v.reference;
       _$v = null;
     }
@@ -289,6 +337,8 @@ class HospitalsRecordBuilder
               valetLocation: valetLocation,
               locationMapping: _locationMapping?.build(),
               floorsMapping: _floorsMapping?.build(),
+              gmapParking: gmapParking,
+              gmapValet: gmapValet,
               reference: reference);
     } catch (_) {
       String _$failedField;

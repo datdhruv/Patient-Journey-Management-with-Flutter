@@ -35,6 +35,14 @@ abstract class HospitalsRecord
   BuiltList<String> get floorsMapping;
 
   @nullable
+  @BuiltValueField(wireName: 'gmap_parking')
+  String get gmapParking;
+
+  @nullable
+  @BuiltValueField(wireName: 'gmap_valet')
+  String get gmapValet;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -42,7 +50,9 @@ abstract class HospitalsRecord
     ..name = ''
     ..contactNumber = ''
     ..locationMapping = ListBuilder()
-    ..floorsMapping = ListBuilder();
+    ..floorsMapping = ListBuilder()
+    ..gmapParking = ''
+    ..gmapValet = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('hospitals');
@@ -70,6 +80,8 @@ Map<String, dynamic> createHospitalsRecordData({
   String contactNumber,
   LatLng parkingLocation,
   LatLng valetLocation,
+  String gmapParking,
+  String gmapValet,
 }) =>
     serializers.toFirestore(
         HospitalsRecord.serializer,
@@ -79,4 +91,6 @@ Map<String, dynamic> createHospitalsRecordData({
           ..parkingLocation = parkingLocation
           ..valetLocation = valetLocation
           ..locationMapping = null
-          ..floorsMapping = null));
+          ..floorsMapping = null
+          ..gmapParking = gmapParking
+          ..gmapValet = gmapValet));

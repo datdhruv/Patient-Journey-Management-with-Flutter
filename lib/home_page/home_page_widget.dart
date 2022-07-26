@@ -1,4 +1,4 @@
-import '../appointment_details/appointment_details_widget.dart';
+import '../appointment_way_details/appointment_way_details_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -425,7 +425,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                AppointmentDetailsWidget(
+                                                AppointmentWayDetailsWidget(
                                               appointmentDetails:
                                                   appointmentCardAppointmentsRecord
                                                       .reference,

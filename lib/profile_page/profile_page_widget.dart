@@ -1,4 +1,4 @@
-import '../appointment_details/appointment_details_widget.dart';
+import '../appointment_way_details/appointment_way_details_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
@@ -7,8 +7,6 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../main.dart';
-import '../maps_parking/maps_parking_widget.dart';
-import '../maps_valet/maps_valet_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -489,7 +487,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          AppointmentDetailsWidget(
+                                          AppointmentWayDetailsWidget(
                                         appointmentDetails:
                                             listViewAppointmentsRecord
                                                 .reference,
@@ -562,19 +560,22 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .background,
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                8, 4, 8, 4),
-                                                    child: Text(
-                                                      dateTimeFormat(
-                                                          'MMMEd',
-                                                          listViewAppointmentsRecord
-                                                              .dateTime),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    8, 4, 8, 4),
+                                                        child: Text(
+                                                          dateTimeFormat(
+                                                              'MMMEd',
+                                                              listViewAppointmentsRecord
+                                                                  .dateTime),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
                                                               .bodyText1
                                                               .override(
                                                                 fontFamily:
@@ -583,7 +584,26 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                         context)
                                                                     .textColor,
                                                               ),
-                                                    ),
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        dateTimeFormat(
+                                                            'jm',
+                                                            listViewAppointmentsRecord
+                                                                .dateTime),
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyText1
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .textColor,
+                                                                ),
+                                                      ),
+                                                    ],
                                                   ),
                                                 ),
                                               ],
@@ -780,23 +800,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                             () async {
                                                                           if ((listViewAppointmentsRecord.valet) ==
                                                                               true) {
-                                                                            await Navigator.push(
-                                                                              context,
-                                                                              MaterialPageRoute(
-                                                                                builder: (context) => MapsValetWidget(
-                                                                                  valetLocation: rowValetAddressRecord,
-                                                                                ),
-                                                                              ),
-                                                                            );
+                                                                            await launchURL(rowHospitalsRecord.gmapValet);
                                                                           } else {
-                                                                            await Navigator.push(
-                                                                              context,
-                                                                              MaterialPageRoute(
-                                                                                builder: (context) => MapsParkingWidget(
-                                                                                  parkingLocation: rowParkingAddressRecord,
-                                                                                ),
-                                                                              ),
-                                                                            );
+                                                                            await launchURL(rowHospitalsRecord.gmapParking);
                                                                           }
                                                                         },
                                                                       ),
