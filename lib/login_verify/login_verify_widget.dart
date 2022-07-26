@@ -29,7 +29,7 @@ class _LoginVerifyWidgetState extends State<LoginVerifyWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).background,
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () async {
@@ -43,7 +43,7 @@ class _LoginVerifyWidgetState extends State<LoginVerifyWidget> {
         ),
         title: Text(
           'Enter OTP',
-          style: FlutterFlowTheme.of(context).title3,
+          style: FlutterFlowTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: false,
@@ -54,13 +54,7 @@ class _LoginVerifyWidgetState extends State<LoginVerifyWidget> {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height * 1,
         decoration: BoxDecoration(
-          color: FlutterFlowTheme.of(context).background,
-          image: DecorationImage(
-            fit: BoxFit.fitWidth,
-            image: Image.asset(
-              'assets/images/page_background.png',
-            ).image,
-          ),
+          color: FlutterFlowTheme.of(context).primaryBackground,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -71,9 +65,12 @@ class _LoginVerifyWidgetState extends State<LoginVerifyWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Expanded(
-                    child: Text(
-                      'Enter the verification code sent to your number.',
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                      child: Text(
+                        'Enter the verification code sent to your number.',
+                        style: FlutterFlowTheme.of(context).bodyText1,
+                      ),
                     ),
                   ),
                 ],
@@ -83,41 +80,33 @@ class _LoginVerifyWidgetState extends State<LoginVerifyWidget> {
               padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
               child: TextFormField(
                 controller: verifyPhoneController,
+                autofocus: true,
                 obscureText: false,
                 decoration: InputDecoration(
                   labelText: 'Verification Code',
-                  labelStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0x98FFFFFF),
-                      ),
+                  labelStyle: FlutterFlowTheme.of(context).bodyText1,
                   hintText: 'Enter your verification code...',
-                  hintStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Color(0x98FFFFFF),
-                      ),
+                  hintStyle: FlutterFlowTheme.of(context).bodyText1,
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0x00000000),
+                      color: FlutterFlowTheme.of(context).secondaryText,
                       width: 1,
                     ),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0x00000000),
+                      color: FlutterFlowTheme.of(context).secondaryText,
                       width: 1,
                     ),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   filled: true,
-                  fillColor: FlutterFlowTheme.of(context).darkBackground,
+                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
                   contentPadding:
                       EdgeInsetsDirectional.fromSTEB(20, 24, 20, 24),
                 ),
-                style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.of(context).tertiaryColor,
-                    ),
+                style: FlutterFlowTheme.of(context).bodyText1,
               ),
             ),
             Padding(

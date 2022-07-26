@@ -72,7 +72,7 @@ class _AppointmentWayDetailsWidgetState
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).background,
+            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             automaticallyImplyLeading: false,
             leading: InkWell(
               onTap: () async {
@@ -86,13 +86,13 @@ class _AppointmentWayDetailsWidgetState
             ),
             title: Text(
               'Directions',
-              style: FlutterFlowTheme.of(context).title3,
+              style: FlutterFlowTheme.of(context).title1,
             ),
             actions: [],
             centerTitle: false,
             elevation: 0,
           ),
-          backgroundColor: FlutterFlowTheme.of(context).background,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           body: StreamBuilder<HospitalsRecord>(
             stream: HospitalsRecord.getDocument(
                 appointmentWayDetailsAppointmentsRecord.location),
@@ -228,14 +228,7 @@ class _AppointmentWayDetailsWidgetState
                                       Text(
                                         columnMainContentHospitalsRecord.name,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              fontSize: 22,
-                                            ),
+                                            .bodyText1,
                                       ),
                                     ],
                                   );
@@ -343,14 +336,7 @@ class _AppointmentWayDetailsWidgetState
                                             appointmentWayDetailsAppointmentsRecord
                                                 .dateTime),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Lexend Deca',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryColor,
-                                              fontSize: 18,
-                                            ),
+                                            .bodyText1,
                                       ),
                                     ],
                                   );
@@ -362,14 +348,7 @@ class _AppointmentWayDetailsWidgetState
                                   'jm',
                                   appointmentWayDetailsAppointmentsRecord
                                       .dateTime),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                    fontSize: 18,
-                                  ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ],
                         );
@@ -649,15 +628,7 @@ class _AppointmentWayDetailsWidgetState
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryColor,
-                                                                fontSize: 22,
-                                                              ),
+                                                              .bodyText1,
                                                     ),
                                                   ],
                                                 ),
@@ -747,12 +718,7 @@ class _AppointmentWayDetailsWidgetState
                               width: 200,
                               height: 40,
                               color: FlutterFlowTheme.of(context).primaryColor,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                  ),
+                              textStyle: FlutterFlowTheme.of(context).subtitle2,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,
@@ -802,12 +768,7 @@ class _AppointmentWayDetailsWidgetState
                               width: 200,
                               height: 40,
                               color: FlutterFlowTheme.of(context).tertiary400,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: Colors.white,
-                                  ),
+                              textStyle: FlutterFlowTheme.of(context).subtitle2,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1,

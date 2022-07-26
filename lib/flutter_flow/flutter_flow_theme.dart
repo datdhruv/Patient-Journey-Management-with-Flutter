@@ -70,13 +70,13 @@ abstract class FlutterFlowTheme {
 }
 
 class LightModeTheme extends FlutterFlowTheme {
-  Color primaryColor = const Color(0xFF4B39EF);
-  Color secondaryColor = const Color(0xFFFBAF7C);
+  Color primaryColor = const Color(0xFF427AA1);
+  Color secondaryColor = const Color(0xFFECD257);
   Color tertiaryColor = const Color(0xFF39D2C0);
   Color alternate = const Color(0xFF39D2C0);
-  Color primaryBackground = const Color(0xFFF1F4F8);
+  Color primaryBackground = const Color(0xFFEBF2FA);
   Color secondaryBackground = const Color(0xFFFFFFFF);
-  Color primaryText = const Color(0xFF090F13);
+  Color primaryText = const Color(0xFF1F1F1F);
   Color secondaryText = const Color(0xFF95A1AC);
 
   Color background = Color(0xFF1A1F24);
@@ -118,49 +118,49 @@ class ThemeTypography extends Typography {
   String get title1Family => 'Lexend Deca';
   TextStyle get title1 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.textColor,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.bold,
         fontSize: 24,
       );
   String get title2Family => 'Lexend Deca';
   TextStyle get title2 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.primaryColor,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.w500,
         fontSize: 28,
       );
   String get title3Family => 'Lexend Deca';
   TextStyle get title3 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.textColor,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.w500,
         fontSize: 20,
       );
   String get subtitle1Family => 'Lexend Deca';
   TextStyle get subtitle1 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.grayLight,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.w500,
         fontSize: 18,
       );
   String get subtitle2Family => 'Lexend Deca';
   TextStyle get subtitle2 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.grayLight,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.normal,
         fontSize: 16,
       );
   String get bodyText1Family => 'Lexend Deca';
   TextStyle get bodyText1 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.grayLight,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );
   String get bodyText2Family => 'Lexend Deca';
   TextStyle get bodyText2 => GoogleFonts.getFont(
         'Lexend Deca',
-        color: theme.textColor,
+        color: Color(0xFF1F1F1F),
         fontWeight: FontWeight.normal,
         fontSize: 14,
       );

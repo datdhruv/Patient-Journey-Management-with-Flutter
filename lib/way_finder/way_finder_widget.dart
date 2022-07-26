@@ -38,7 +38,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF1A1F24),
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -56,13 +56,13 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
         ),
         title: Text(
           'Path Finder',
-          style: FlutterFlowTheme.of(context).title3,
+          style: FlutterFlowTheme.of(context).title1,
         ),
         actions: [],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: Color(0xFF1A1F24),
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: StreamBuilder<HospitalsRecord>(
@@ -95,12 +95,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                           alignment: AlignmentDirectional(0, 0),
                           child: Text(
                             'Floor',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryColor,
-                                    ),
+                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
                       ),
@@ -134,7 +129,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                             ),
                             fillColor: Colors.white,
                             elevation: 2,
-                            borderColor: Colors.transparent,
+                            borderColor: FlutterFlowTheme.of(context).gray600,
                             borderWidth: 0,
                             borderRadius: 5,
                             margin:
@@ -158,13 +153,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                             child: Text(
                               'Source',
                               textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                  ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ),
                         ),
@@ -175,13 +164,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                             child: Text(
                               'Destination',
                               textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Lexend Deca',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                  ),
+                              style: FlutterFlowTheme.of(context).bodyText1,
                             ),
                           ),
                         ),
@@ -224,7 +207,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                               ),
                               fillColor: Colors.white,
                               elevation: 2,
-                              borderColor: Colors.transparent,
+                              borderColor: FlutterFlowTheme.of(context).gray600,
                               borderWidth: 0,
                               borderRadius: 5,
                               margin:
@@ -263,7 +246,7 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                               ),
                               fillColor: Colors.white,
                               elevation: 2,
-                              borderColor: Colors.transparent,
+                              borderColor: FlutterFlowTheme.of(context).gray600,
                               borderWidth: 0,
                               borderRadius: 5,
                               margin:
@@ -376,15 +359,9 @@ class _WayFinderWidgetState extends State<WayFinderWidget> {
                                                     5, 0, 5, 0),
                                             child: Text(
                                               directionsItem,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .subtitle1
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondaryColor,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .subtitle1,
                                             ),
                                           ),
                                         ),

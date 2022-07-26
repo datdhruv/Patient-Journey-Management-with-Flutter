@@ -76,7 +76,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: Color(0xFF1A1F24),
+            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             automaticallyImplyLeading: false,
             title: Text(
               'History',
@@ -96,7 +96,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
             centerTitle: false,
             elevation: 2,
           ),
-          backgroundColor: FlutterFlowTheme.of(context).background,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           body: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -130,42 +130,52 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12, 0, 0, 0),
-                                  child: Container(
-                                    width: 44,
-                                    height: 44,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .darkBackground,
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    elevation: 0,
+                                    shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8),
-                                      border: Border.all(
-                                        color: FlutterFlowTheme.of(context)
-                                            .background,
-                                        width: 2,
-                                      ),
                                     ),
-                                    child: Align(
-                                      alignment: AlignmentDirectional(0, 0),
-                                      child: FlutterFlowIconButton(
-                                        borderColor: Colors.transparent,
-                                        borderRadius: 30,
-                                        buttonSize: 46,
-                                        icon: Icon(
-                                          Icons.login_rounded,
+                                    child: Container(
+                                      width: 44,
+                                      height: 44,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                        borderRadius: BorderRadius.circular(8),
+                                        border: Border.all(
                                           color: FlutterFlowTheme.of(context)
-                                              .secondaryColor,
-                                          size: 24,
+                                              .primaryBackground,
+                                          width: 2,
                                         ),
-                                        onPressed: () async {
-                                          await signOut();
-                                          await Navigator.pushAndRemoveUntil(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  LoginPageWidget(),
-                                            ),
-                                            (r) => false,
-                                          );
-                                        },
+                                      ),
+                                      child: Align(
+                                        alignment: AlignmentDirectional(0, 0),
+                                        child: FlutterFlowIconButton(
+                                          borderColor:
+                                              FlutterFlowTheme.of(context)
+                                                  .gray600,
+                                          borderRadius: 22,
+                                          borderWidth: 0,
+                                          buttonSize: 46,
+                                          icon: Icon(
+                                            Icons.login_rounded,
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryColor,
+                                            size: 24,
+                                          ),
+                                          onPressed: () async {
+                                            await signOut();
+                                            await Navigator.pushAndRemoveUntil(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginPageWidget(),
+                                              ),
+                                              (r) => false,
+                                            );
+                                          },
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -183,12 +193,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                         children: [
                           Text(
                             'Past Appointments',
-                            style: FlutterFlowTheme.of(context).title2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color:
-                                      FlutterFlowTheme.of(context).tertiary400,
-                                  fontSize: 20,
-                                ),
+                            style: FlutterFlowTheme.of(context).title2,
                           ),
                         ],
                       ),
@@ -260,7 +265,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                       height: 150,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .darkBackground,
+                                            .secondaryColor,
                                         borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Padding(
@@ -316,7 +321,8 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                         .antiAliasWithSaveLayer,
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .background,
+                                                        .secondaryColor,
+                                                    elevation: 0,
                                                     child: Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
@@ -330,14 +336,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .textColor,
-                                                                ),
+                                                                .bodyText1,
                                                       ),
                                                     ),
                                                   ),
@@ -501,11 +500,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                                         rowHospitalsRecord
                                                                             .name,
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Lexend Deca',
-                                                                              color: FlutterFlowTheme.of(context).secondaryColor,
-                                                                            ),
+                                                                            .bodyText1,
                                                                       ),
                                                                     ],
                                                                   );
@@ -551,14 +546,7 @@ class _PastAppointmentsWidgetState extends State<PastAppointmentsWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryColor,
-                                                                ),
+                                                                .bodyText1,
                                                       ),
                                                     ),
                                                   ),

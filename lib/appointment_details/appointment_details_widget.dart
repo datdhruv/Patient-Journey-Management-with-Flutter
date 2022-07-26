@@ -48,7 +48,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).background,
+            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             automaticallyImplyLeading: false,
             leading: InkWell(
               onTap: () async {
@@ -62,13 +62,13 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
             ),
             title: Text(
               'Details',
-              style: FlutterFlowTheme.of(context).title3,
+              style: FlutterFlowTheme.of(context).title1,
             ),
             actions: [],
             centerTitle: false,
             elevation: 0,
           ),
-          backgroundColor: FlutterFlowTheme.of(context).background,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           body: StreamBuilder<HospitalsRecord>(
             stream: HospitalsRecord.getDocument(
                 appointmentDetailsAppointmentsRecord.location),
@@ -92,7 +92,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
                       child: Container(
                         width: 200,
                         height: 200,
@@ -273,15 +273,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                                   listViewDefPathsRecord.name,
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .subtitle1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .secondaryColor,
-                                                      ),
+                                                      .subtitle1,
                                                 ),
                                               ),
                                             ),
@@ -457,14 +449,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                   EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                               child: Text(
                                 appointmentDetailsAppointmentsRecord.doctor,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryColor,
-                                      fontSize: 22,
-                                    ),
+                                style: FlutterFlowTheme.of(context).bodyText1,
                               ),
                             ),
                           ),
@@ -519,7 +504,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                     height: 50,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .darkBackground,
+                                          .secondaryColor,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Column(

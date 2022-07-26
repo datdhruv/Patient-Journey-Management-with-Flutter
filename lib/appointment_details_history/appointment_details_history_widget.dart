@@ -45,7 +45,7 @@ class _AppointmentDetailsHistoryWidgetState
         return Scaffold(
           key: scaffoldKey,
           appBar: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).background,
+            backgroundColor: FlutterFlowTheme.of(context).primaryColor,
             automaticallyImplyLeading: false,
             leading: InkWell(
               onTap: () async {
@@ -59,13 +59,13 @@ class _AppointmentDetailsHistoryWidgetState
             ),
             title: Text(
               'Details',
-              style: FlutterFlowTheme.of(context).title3,
+              style: FlutterFlowTheme.of(context).title1,
             ),
             actions: [],
             centerTitle: false,
             elevation: 0,
           ),
-          backgroundColor: FlutterFlowTheme.of(context).background,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           body: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
@@ -172,13 +172,7 @@ class _AppointmentDetailsHistoryWidgetState
                           ),
                           Text(
                             rowHospitalsRecord.name,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryColor,
-                                      fontSize: 22,
-                                    ),
+                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ],
                       );
@@ -206,13 +200,7 @@ class _AppointmentDetailsHistoryWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(4, 0, 0, 0),
                           child: Text(
                             appointmentDetailsHistoryAppointmentsRecord.doctor,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryColor,
-                                      fontSize: 22,
-                                    ),
+                            style: FlutterFlowTheme.of(context).bodyText1,
                           ),
                         ),
                       ),

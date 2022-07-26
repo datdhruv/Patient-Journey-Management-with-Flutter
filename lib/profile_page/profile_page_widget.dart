@@ -55,7 +55,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Color(0xFF1A1F24),
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         title: Text(
           'Profile',
@@ -75,7 +75,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
         centerTitle: false,
         elevation: 2,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).background,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
         child: AuthUserStreamWidget(
           child: StreamBuilder<List<PatientsRecord>>(
@@ -212,7 +212,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           .bodyText1
                                           .override(
                                             fontFamily: 'Lexend Deca',
-                                            color: Colors.black,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
                                             fontSize: 12,
                                           ),
                                       hintText: 'Select User',
@@ -224,7 +225,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       ),
                                       fillColor: Colors.white,
                                       elevation: 2,
-                                      borderColor: Colors.transparent,
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).gray600,
                                       borderWidth: 0,
                                       borderRadius: 8,
                                       margin: EdgeInsetsDirectional.fromSTEB(
@@ -428,13 +430,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                           padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
                           child: Text(
                             'Coming appointments: ',
-                            style: FlutterFlowTheme.of(context).title2.override(
-                                  fontFamily: 'Lexend Deca',
-                                  color:
-                                      FlutterFlowTheme.of(context).tertiary400,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                            style: FlutterFlowTheme.of(context).title2,
                           ),
                         ),
                       ],
@@ -506,7 +502,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     height: 150,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
-                                          .darkBackground,
+                                          .secondaryColor,
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     child: Padding(
@@ -559,7 +555,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                       .antiAliasWithSaveLayer,
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .background,
+                                                      .secondaryColor,
+                                                  elevation: 0,
                                                   child: Row(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -576,14 +573,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                   .dateTime),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .textColor,
-                                                              ),
+                                                              .bodyText1,
                                                         ),
                                                       ),
                                                       Text(
@@ -594,14 +584,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .textColor,
-                                                                ),
+                                                                .bodyText1,
                                                       ),
                                                     ],
                                                   ),
@@ -764,13 +747,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                                           .name,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Lexend Deca',
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryColor,
-                                                                          ),
+                                                                          .bodyText1,
                                                                     ),
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional
@@ -849,14 +826,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryColor,
-                                                              ),
+                                                              .bodyText1,
                                                     ),
                                                   ),
                                                 ),

@@ -26,7 +26,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).background,
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         title: Text(
           'Appointments',
@@ -46,7 +46,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).background,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.max,
@@ -226,7 +226,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                               height: 200,
                               decoration: BoxDecoration(
                                 color:
-                                    FlutterFlowTheme.of(context).darkBackground,
+                                    FlutterFlowTheme.of(context).secondaryColor,
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Padding(
@@ -291,7 +291,8 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                             clipBehavior:
                                                 Clip.antiAliasWithSaveLayer,
                                             color: FlutterFlowTheme.of(context)
-                                                .background,
+                                                .secondaryColor,
+                                            elevation: 0,
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -305,14 +306,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                             .dateTime),
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .textColor,
-                                                        ),
+                                                        .bodyText1,
                                                   ),
                                                 ),
                                                 Text(
@@ -322,15 +316,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                           .dateTime),
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .textColor,
-                                                      ),
+                                                      .bodyText1,
                                                 ),
                                               ],
                                             ),
@@ -484,14 +470,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                                                     .name,
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Lexend Deca',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryColor,
-                                                                    ),
+                                                                    .bodyText1,
                                                               ),
                                                               Padding(
                                                                 padding:
